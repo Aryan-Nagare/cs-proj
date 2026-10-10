@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+
+  <model name="rough_terrain_rover">
+
+    <!-- ================= CHASSIS ================= -->
+    <link name="chassis">
+
+      <pose>0 0 0.35 0 0 0</pose>
+
+      <inertial>
+        <mass>10.0</mass>
+        <inertia>
+          <ixx>1.0</ixx>
+          <iyy>1.0</iyy>
+          <izz>1.0</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="chassis_collision">
+        <geometry>
+          <box>
+            <size>1.2 0.8 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="chassis_visual">
+        <geometry>
+          <box>
+            <size>1.2 0.8 0.3</size>
+          </box>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <!-- ================= FRONT LEFT WHEEL ================= -->
+    <link name="front_left_wheel">
+
+      <pose>0.4 0.5 0.2 1.5708 0 0</pose>
+
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.02</ixx>
+          <iyy>0.02</iyy>
+          <izz>0.02</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="wheel_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="wheel_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <!-- ================= FRONT RIGHT WHEEL ================= -->
+    <link name="front_right_wheel">
+
+      <pose>0.4 -0.5 0.2 1.5708 0 0</pose>
+
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.02</ixx>
+          <iyy>0.02</iyy>
+          <izz>0.02</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="wheel_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="wheel_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <!-- ================= REAR LEFT WHEEL ================= -->
+    <link name="rear_left_wheel">
+
+      <pose>-0.4 0.5 0.2 1.5708 0 0</pose>
+
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.02</ixx>
+          <iyy>0.02</iyy>
+          <izz>0.02</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="wheel_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="wheel_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <!-- ================= REAR RIGHT WHEEL ================= -->
+    <link name="rear_right_wheel">
+
+      <pose>-0.4 -0.5 0.2 1.5708 0 0</pose>
+
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.02</ixx>
+          <iyy>0.02</iyy>
+          <izz>0.02</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="wheel_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="wheel_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <!-- ================= WHEEL JOINTS ================= -->
+
+    <joint name="front_left_joint" type="revolute">
+      <parent>chassis</parent>
+      <child>front_left_wheel</child>
+
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+
+    <joint name="front_right_joint" type="revolute">
+      <parent>chassis</parent>
+      <child>front_right_wheel</child>
+
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+
+    <joint name="rear_left_joint" type="revolute">
+      <parent>chassis</parent>
+      <child>rear_left_wheel</child>
+
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+
+    <joint name="rear_right_joint" type="revolute">
+      <parent>chassis</parent>
+      <child>rear_right_wheel</child>
+
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+  </model>
+
+</sdf>
